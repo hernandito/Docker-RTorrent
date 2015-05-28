@@ -96,8 +96,8 @@ RUN chown -R torrent /config &&\
 RUN mkdir /download
 RUN mkdir /downloadunraid
 RUN chown -R torrent /download &&\
-    chmod -R 777 /download
-chmod -R 777 /downloadunraid
+
+RUN chmod -R 777 /downloadunraid
 
 COPY docker-*.sh /
 RUN chmod 777 /docker-*.sh
