@@ -96,6 +96,7 @@ RUN chown -R torrent /config &&\
 RUN mkdir /download
 RUN mkdir /downloadunraid
 RUN chown -R torrent /download &&\
+chmod -R 777 /download
 
 RUN chmod -R 777 /downloadunraid
 
