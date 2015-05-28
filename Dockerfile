@@ -5,6 +5,11 @@ ENV RUTORRENT_URI=https://bintray.com/artifact/download/novik65/generic/rutorren
     RUTORRENT_PLUGINS_URI=https://bintray.com/artifact/download/novik65/generic/plugins-3.6.tar.gz\
     RUTORRENT_PLUGINS_SHA1=617625cda45c689f5505fbfdfb6cc4000bc6b1d9
 
+ENV LC_ALL C.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
+ENV TERM xterm
+
 RUN \
     locale-gen en_US.UTF-8 &&\
     update-locale LANG=en_US.UTF-8 &&\
@@ -25,6 +30,7 @@ RUN \
         ffmpeg\
         mediainfo\
         nginx\
+        mc \
         php5-cli\
         php5-fpm\
         php5-geoip\
@@ -88,8 +94,10 @@ RUN chown -R torrent /config &&\
 	chmod -R 777 /config
 	
 RUN mkdir /download
+RUN mkdir /downloadunraid
 RUN chown -R torrent /download &&\
     chmod -R 777 /download
+chmod -R 777 /downloadunraid
 
 COPY docker-*.sh /
 RUN chmod 777 /docker-*.sh
@@ -102,6 +110,6 @@ RUN chmod 777 /edge.sh
 
 EXPOSE 80 443 45566-45576 9527
 
-VOLUME ["/config", "/download",]
+VOLUME ["/config", "/download", "/downloadunraid"]
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/docker-start.sh"]
