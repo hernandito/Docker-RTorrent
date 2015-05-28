@@ -6,6 +6,7 @@ if [ -f /config/rutorrent/index.html ]; then
 else
 	echo "Moving ruTorrent into /config"
 	mv /var/www/rutorrent /config/rutorrent
+	copy /favicon.ico /config/rutorrent/favicon.ico
 fi
 
 # Does the user want the edge version?
