@@ -109,6 +109,8 @@ RUN chmod 777 /ssl.sh
 COPY edge.sh /
 RUN chmod 777 /edge.sh
 
+COPY favicon.ico /
+
 EXPOSE 80 443 45566-45576 9527
 
 VOLUME ["/config", "/download", "/downloadunraid"]
