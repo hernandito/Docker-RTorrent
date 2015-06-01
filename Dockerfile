@@ -94,11 +94,16 @@ RUN chown -R torrent /config &&\
 	chmod -R 777 /config
 	
 RUN mkdir /download
+RUN mkdir /downloadwatch
+RUN mkdir /downloadwatch/Books
+
 RUN mkdir /downloadunraid
 RUN chown -R torrent /download &&\
+RUN chown -R torrent /downloadwatch &&\
 chmod -R 777 /download
 
 RUN chmod -R 777 /downloadunraid
+RUN chmod -R 777 /downloadwatch
 
 COPY docker-*.sh /
 RUN chmod 777 /docker-*.sh
