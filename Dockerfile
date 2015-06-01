@@ -95,7 +95,7 @@ RUN chown -R torrent /config &&\
 	
 RUN mkdir /download
 RUN mkdir /downloadwatch
-RUN mkdir /downloadwatch/Books
+
 
 RUN mkdir /downloadunraid
 RUN chown -R torrent /download &&\
