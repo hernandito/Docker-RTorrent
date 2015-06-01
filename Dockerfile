@@ -95,13 +95,12 @@ RUN chown -R torrent /config &&\
 	
 RUN mkdir /download
 RUN mkdir /downloadwatch
-
-
 RUN mkdir /downloadunraid
-RUN chown -R torrent /download &&\
-RUN chown -R torrent /downloadwatch &&\
-chmod -R 777 /download
 
+RUN chown -R torrent /download 
+RUN chown -R torrent /downloadwatch 
+
+RUN chmod -R 777 /download
 RUN chmod -R 777 /downloadunraid
 RUN chmod -R 777 /downloadwatch
 
